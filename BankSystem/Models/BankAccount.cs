@@ -18,4 +18,12 @@ public class BankAccount
     public List<ILimit> Limits { get; } = new List<ILimit>();
 
 
+    public BankAccount(int number, CurrencyCodes currency, double money, string userCode, int bankCode)
+    {
+        Number = number;
+        Currency = currency;
+        Money = money;
+        UserCode = userCode;
+        BankCode = bankCode;
+    }
 }
