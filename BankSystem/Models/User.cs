@@ -3,7 +3,7 @@ namespace BankSystem.Models;
 public class User
 {
     public int Id { get; }
-    public string Name { get; set; }
+    public string Name { get; set; } = "noname";
 
     public User(int id)
     {
@@ -22,6 +22,11 @@ public class User
             return false;
         }
         User user = (User)obj;
-        return true;
+        return Id == user.Id && Name == user.Name;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id * 1000 + Name.Length;
     }
 }
