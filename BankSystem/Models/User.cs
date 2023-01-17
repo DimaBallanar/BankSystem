@@ -14,4 +14,13 @@ public class User
     {
         Name = name;
     }
+
+    public override bool Equals(Object? obj)
+    {
+        if (obj == null || obj is not User)
+        {
+            return false;
+        }
+        return true;
+    }
 }
