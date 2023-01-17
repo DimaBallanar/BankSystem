@@ -7,10 +7,23 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            User user1 = new User(1, "Test1");
-            User user2 = user1;
-            System.Console.WriteLine(user1 == user2);
-            System.Console.WriteLine(user1.Equals(user2));
+            List<ExchangeRate> rates = new List<ExchangeRate>();   // ExchangeRate[] rates = { ex1, ex2 };  
+            Currency op = new Currency((int)CurrencyCodes.USD, "Доллар США", "$", CurrencyCodes.USD.ToString());
+            System.Console.WriteLine((CurrencyCodes)op.Code == CurrencyCodes.USD);
+            rates.Add(new ExchangeRate((int)CurrencyCodes.BYN, (int)CurrencyCodes.USD, 2.67));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.BYN, (int)CurrencyCodes.EURO, 2.83));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.BYN, (int)CurrencyCodes.GBP, 2.91));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.USD, (int)CurrencyCodes.EURO, 0.97));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.USD, (int)CurrencyCodes.GBP, 0.9));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.USD, (int)CurrencyCodes.PLN, 5));
+            rates.Add(new ExchangeRate((int)CurrencyCodes.BYN, (int)CurrencyCodes.PLN, 0.4));
+            System.Console.WriteLine(rates.Count);
+            System.Console.WriteLine(rates.FirstOrDefault(x => x.CurrencyFrom == (int)CurrencyCodes.PLN && x.CurrencyTo == (int)CurrencyCodes.USD));
+
+
+
+
+
         }
     }
 }

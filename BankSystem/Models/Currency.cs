@@ -19,6 +19,11 @@ public class Currency
         ShortName = shortName;
     }
 
+    public override string ToString()
+    {
+        return $"{Name} ({ShortName})";
+    }
+
 
 }
 
