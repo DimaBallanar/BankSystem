@@ -21,6 +21,7 @@ public class User
         {
             return false;
         }
+        User user = (User)obj;
         return true;
     }
 }
