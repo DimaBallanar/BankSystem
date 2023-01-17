@@ -7,7 +7,18 @@ public class Currency
     public string Symbol { get; set; }
     public string ShortName { get; set; }
 
+    public Currency()
+    {
+
+    }
+    public Currency(int code, string name, string symbol, string shortName)
+    {
+        Code = code;
+        Name = name;
+        Symbol = symbol;
+        ShortName = shortName;
+    }
+
 
 }
 
-// Код валюты, имя валюты, символ валюты, сокращенное имя 
