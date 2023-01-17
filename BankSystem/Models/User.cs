@@ -17,10 +17,16 @@ public class User
 
     public override bool Equals(Object? obj)
     {
+        if (base.Equals(obj))
+        {
+            System.Console.WriteLine("Links are equals");
+            return true;
+        }
         if (obj == null || obj is not User)
         {
             return false;
         }
+
         User user = (User)obj;
         return Id == user.Id && Name == user.Name;
     }
